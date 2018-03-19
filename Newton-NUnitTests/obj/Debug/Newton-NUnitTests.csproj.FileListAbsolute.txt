@@ -19,3 +19,8 @@ D:\Courses\NET.S.2018.Chebotkov.3\Newton-NUnitTests\obj\Debug\Newton-NUnitTests.
 D:\Courses\NET.S.2018.Chebotkov.3\Newton-NUnitTests\obj\Debug\Newton-NUnitTests.csproj.CoreCompileInputs.cache
 D:\Courses\NET.S.2018.Chebotkov.3\Newton-NUnitTests\obj\Debug\Newton-NUnitTests.dll
 D:\Courses\NET.S.2018.Chebotkov.3\Newton-NUnitTests\obj\Debug\Newton-NUnitTests.pdb
+D:\Courses\NET.S.2018.Chebotkov.3\Newton-NUnitTests\bin\Debug\NUnit3.TestAdapter.dll
+D:\Courses\NET.S.2018.Chebotkov.3\Newton-NUnitTests\bin\Debug\NUnit3.TestAdapter.pdb
+D:\Courses\NET.S.2018.Chebotkov.3\Newton-NUnitTests\bin\Debug\nunit.engine.dll
+D:\Courses\NET.S.2018.Chebotkov.3\Newton-NUnitTests\bin\Debug\nunit.engine.api.dll
+D:\Courses\NET.S.2018.Chebotkov.3\Newton-NUnitTests\bin\Debug\Mono.Cecil.dll

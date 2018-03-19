@@ -22,7 +22,6 @@ namespace Newton_NUnitTests
         [TestCase(8, 3, 0.0001, 2)]
         [TestCase(0.0279936, 7, 0.0001, 0.6)]
         [TestCase(0.0081, 4, 0.1, 0.3)]
-        [TestCase(-0.008, 3, 0.1, -0.2)]
         public void TestsForFindNthRoot(double number, int root, double precision, double expectedResult)
         {
             double result = Newton.Newton.FindNthRoot(number, root, precision);
