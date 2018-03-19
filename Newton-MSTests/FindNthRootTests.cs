@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Newton_NUnitTests
+namespace Newton_MSTests
 {
     /// <summary>
     /// Test class for FindNthRoot
@@ -17,7 +17,7 @@ namespace Newton_NUnitTests
         {
             //Arange
             double number = 1;
-            double root = 5;
+            int root = 5;
             double precision = 0.0001;
             double expectedResult = 1;
 
@@ -25,7 +25,7 @@ namespace Newton_NUnitTests
             double result = Newton.Newton.FindNthRoot(number, root, precision);
 
             //Assert
-            Assert.AreEqual(expectedResult, result);
+            Assert.AreEqual(expectedResult, result, precision);
         }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace Newton_NUnitTests
         {
             //Arange
             double number = 8;
-            double root = 3;
+            int root = 3;
             double precision = 0.0001;
             double expectedResult = 2;
 
@@ -44,7 +44,7 @@ namespace Newton_NUnitTests
             double result = Newton.Newton.FindNthRoot(number, root, precision);
 
             //Assert
-            Assert.AreEqual(expectedResult, result);
+            Assert.AreEqual(expectedResult, result, precision);
         }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace Newton_NUnitTests
         {
             //Arange
             double number = 0.001;
-            double root = 3;
+            int root = 3;
             double precision = 0.0001;
             double expectedResult = 0.1;
 
@@ -63,7 +63,7 @@ namespace Newton_NUnitTests
             double result = Newton.Newton.FindNthRoot(number, root, precision);
 
             //Assert
-            Assert.AreEqual(expectedResult, result);
+            Assert.AreEqual(expectedResult, result, precision);
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Newton_NUnitTests
         {
             //Arange
             double number = 0.04100625;
-            double root = 4;
+            int root = 4;
             double precision = 0.0001;
             double expectedResult = 0.45;
 
@@ -82,26 +82,27 @@ namespace Newton_NUnitTests
             double result = Newton.Newton.FindNthRoot(number, root, precision);
 
             //Assert
-            Assert.AreEqual(expectedResult, result);
+            Assert.AreEqual(expectedResult, result, precision);
         }
 
         /// <summary>
         /// Test method
         /// </summary>
         [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void TestsForFindNthRoot5()
         {
             //Arange
-            double number = -0.008;
-            double root = 3;
-            double precision = 0.1;
-            double expectedResult = -0.2;
+            double number = 8;
+            int root = -15;
+            double precision = 0.001;
+            double expectedResult = -5;
 
             //Act
             double result = Newton.Newton.FindNthRoot(number, root, precision);
 
             //Assert
-            Assert.AreEqual(expectedResult, result);
+            Assert.AreEqual(expectedResult, result, precision);
         }
 
         /// <summary>
@@ -113,7 +114,7 @@ namespace Newton_NUnitTests
         {
             //Arange
             double number = 8;
-            double root = 15;
+            int root = 15;
             double precision = -7;
             double expectedResult = -5;
 
@@ -121,7 +122,7 @@ namespace Newton_NUnitTests
             double result = Newton.Newton.FindNthRoot(number, root, precision);
 
             //Assert
-            Assert.AreEqual(expectedResult, result);
+            Assert.AreEqual(expectedResult, result, precision);
         }
 
         /// <summary>
@@ -133,7 +134,7 @@ namespace Newton_NUnitTests
         {
             //Arange
             double number = 8;
-            double root = 15;
+            int root = 15;
             double precision = -0.6;
             double expectedResult = -0.1;
 
@@ -141,7 +142,27 @@ namespace Newton_NUnitTests
             double result = Newton.Newton.FindNthRoot(number, root, precision);
 
             //Assert
-            Assert.AreEqual(expectedResult, result);
+            Assert.AreEqual(expectedResult, result, precision);
+        }
+
+        /// <summary>
+        /// Test method
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void TestsForFindNthRoot8()
+        {
+            //Arange
+            double number = -3;
+            int root = 32;
+            double precision = 0.001;
+            double expectedResult = -5;
+
+            //Act
+            double result = Newton.Newton.FindNthRoot(number, root, precision);
+
+            //Assert
+            Assert.AreEqual(expectedResult, result, precision);
         }
     }
 }

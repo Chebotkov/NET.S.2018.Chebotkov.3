@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace Newton_MSTests
+namespace Newton_NUnitTests
 {
     /// <summary>
     /// Test class for FindNthRoot
@@ -23,10 +23,10 @@ namespace Newton_MSTests
         [TestCase(0.0279936, 7, 0.0001, 0.6)]
         [TestCase(0.0081, 4, 0.1, 0.3)]
         [TestCase(-0.008, 3, 0.1, -0.2)]
-        public void TestsForFindNthRoot(double number, double root, double precision, double expectedResult)
+        public void TestsForFindNthRoot(double number, int root, double precision, double expectedResult)
         {
             double result = Newton.Newton.FindNthRoot(number, root, precision);
-            Assert.AreEqual(expectedResult, result);
+            Assert.AreEqual(expectedResult, result, precision);
         }
     }
 }
