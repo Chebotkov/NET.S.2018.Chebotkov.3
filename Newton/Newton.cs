@@ -34,15 +34,12 @@ namespace Newton
             }
 
             double XPrevious = number / root;
-            Console.WriteLine("XPrevious=", XPrevious);
             double XNext = 1.0 / root * (((root - 1) * XPrevious) + (number / Math.Pow(XPrevious, root - 1)));
 
             while (Math.Abs(XNext - XPrevious) >= precision)
             {
                 XPrevious = XNext;
-                XNext = 1.0 / root * (((root - 1) * XPrevious) + (number / Math.Pow(XPrevious, root - 1)));
-
-                Console.WriteLine(XNext);
+                XNext = 1.0 / root * (((root - 1) * XPrevious) + (number / Math.Pow(XPrevious, root - 1)));                
             }
 
             return XNext;
