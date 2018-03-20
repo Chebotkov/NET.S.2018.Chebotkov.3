@@ -14,38 +14,38 @@ namespace Newton
         /// <param name="number">Number</param>
         /// <param name="root">Root</param>
         /// <param name="precision">Precision</param>
-        /// <exception cref="ArgumentOutOfRangeException"></exception>
+        /// <exception cref="ArgumentOutOfRangeException">Throws when was entered wrong precision or root and number are wrong.</exception>
         /// <returns>Root of a number</returns>
         public static double FindNthRoot(double number, int root, double precision)
         {
             if (precision > 1 || precision < 0)
             {
-                throw new ArgumentOutOfRangeException();
+                throw new ArgumentOutOfRangeException("Wrong precision.");
             }
 
             if(root <= 0)
             {
-                throw new ArgumentOutOfRangeException();
+                throw new ArgumentOutOfRangeException("Wrong root. Root must be positive.");
             }
 
-            if(number <= 0)
+            if(number <= 0 && root%2==0)
             {
-                throw new ArgumentOutOfRangeException();
+                throw new ArgumentOutOfRangeException("Can't get even root from negative number.");
             }
 
-            double xk = number / root;
-            Console.WriteLine("xk=", xk);
-            double xk1 = 1.0 / root * (((root - 1) * xk) + (number / Math.Pow(xk, root - 1)));
+            double XPrevious = number / root;
+            Console.WriteLine("XPrevious=", XPrevious);
+            double XNext = 1.0 / root * (((root - 1) * XPrevious) + (number / Math.Pow(XPrevious, root - 1)));
 
-            while (Math.Abs(xk1 - xk) >= precision)
+            while (Math.Abs(XNext - XPrevious) >= precision)
             {
-                xk = xk1;
-                xk1 = 1.0 / root * (((root - 1) * xk) + (number / Math.Pow(xk, root - 1)));
+                XPrevious = XNext;
+                XNext = 1.0 / root * (((root - 1) * XPrevious) + (number / Math.Pow(XPrevious, root - 1)));
 
-                Console.WriteLine(xk1);
+                Console.WriteLine(XNext);
             }
 
-            return xk1;
+            return XNext;
         }
         #endregion
     }

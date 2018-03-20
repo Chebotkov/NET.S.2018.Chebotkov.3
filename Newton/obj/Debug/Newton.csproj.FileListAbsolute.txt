@@ -3,3 +3,4 @@ D:\Courses\NET.S.2018.Chebotkov.3\Newton\bin\Debug\Newton.pdb
 D:\Courses\NET.S.2018.Chebotkov.3\Newton\obj\Debug\Newton.csproj.CoreCompileInputs.cache
 D:\Courses\NET.S.2018.Chebotkov.3\Newton\obj\Debug\Newton.dll
 D:\Courses\NET.S.2018.Chebotkov.3\Newton\obj\Debug\Newton.pdb
+D:\Courses\NET.S.2018.Chebotkov.3\Newton\obj\Debug\Newton.csprojResolveAssemblyReference.cache
